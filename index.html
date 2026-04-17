@@ -43,10 +43,10 @@
   --rl-bg:#e8f5e8;--rl-c:#1b5e20;
   --r:14px;--ff:'Nunito',sans-serif;--fd:'Playfair Display',serif;
 }
-html,body{height:100%;background:#1a3d1a;font-family:var(--ff);color:var(--text);overflow:hidden;}
-#app{max-width:430px;margin:0 auto;min-height: 100vh;display:flex;flex-direction:column;background:var(--cream);position:relative;overflow-y: auto;}
-.screen{display:none;flex-direction:column;flex:1;overflow: visible;animation:fu .25s ease;}
-.screen.active{display:flex;}
+46 html,body{min-height:100%;background:#1a3d1a;font-family:var(--ff);color:var(--text);overflow-y:auto;}
+47 #app{max-width:430px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;background:var(--cream);position:relative;overflow:visible;}
+48 .screen{display:none;flex-direction:column;flex:1;overflow:visible;animation:fu .25s ease;}
+49 .screen.active{display:flex;}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .sb{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 .sb::-webkit-scrollbar{display:none;}
