@@ -1,1 +1,750 @@
-29a0c1b965fb76845d5a95d3665a3a3249c0e64a
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a3d1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Viva Market">
+<meta name="description" content="Consumo consciente para tu familia en Guayaquil · Viva Market EC">
+<title>Viva Market – Consumo Consciente</title>
+<!-- Google Analytics 4 — reemplaza G-XXXXXXXXXX con tu Measurement ID -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPTGSJN4YP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TPTGSJN4YP');
+</script>
+    page_title: 'Viva Market App',
+    page_location: window.location.href
+  });
+
+  // Helper central de tracking
+  function track(event, params) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', event, params || {});
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+:root{
+  --gd:#1a3d1a;--gm:#2d6a2d;--gl:#e8f5e8;--gs:#a5d6a7;
+  --org:#e07c24;--cream:#f7f4ef;--white:#ffffff;
+  --text:#1c1c1c;--muted:#7a7a7a;--border:rgba(0,0,0,0.08);
+  --rh-bg:#fce4ec;--rh-c:#880e4f;
+  --rm-bg:#fff3e0;--rm-c:#bf360c;
+  --rl-bg:#e8f5e8;--rl-c:#1b5e20;
+  --r:14px;--ff:'Nunito',sans-serif;--fd:'Playfair Display',serif;
+}
+html,body{height:100%;background:#1a3d1a;font-family:var(--ff);color:var(--text);overflow:hidden;}
+#app{max-width:430px;margin:0 auto;min-height: 100vh;display:flex;flex-direction:column;background:var(--cream);position:relative;overflow-y: auto;}
+.screen{display:none;flex-direction:column;flex:1;overflow: visible;animation:fu .25s ease;}
+.screen.active{display:flex;}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sb{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.sb::-webkit-scrollbar{display:none;}
+
+/* LOGO SVG */
+.logo-svg{display:block;}
+
+/* TOP BAR */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:13px 18px 10px;background:var(--cream);border-bottom:1px solid var(--border);flex-shrink:0;}
+.topbar-title{font-family:var(--fd);font-size:17px;color:var(--gd);}
+.back{font-size:13px;color:var(--gm);background:none;border:none;cursor:pointer;padding:4px 0;font-family:var(--ff);display:flex;align-items:center;gap:3px;}
+
+/* ── HOME ── */
+#s-home .hero{background:var(--gd);padding:32px 22px 26px;position:relative;overflow:hidden;flex-shrink:0;}
+#s-home .hero::before{content:'';position:absolute;top:-60px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.03);}
+#s-home .hero::after{content:'';position:absolute;bottom:-40px;left:-30px;width:160px;height:160px;border-radius:50%;background:rgba(126,216,126,0.06);}
+.hero-sub{color:rgba(255,255,255,0.72);font-size:14px;line-height:1.65;margin:10px 0 20px;position:relative;z-index:1;}
+.hero-cta{background:#fff;color:var(--gd);border:none;border-radius:24px;padding:12px 26px;font-size:14px;font-weight:600;font-family:var(--ff);cursor:pointer;transition:transform .15s;display:inline-flex;align-items:center;gap:6px;position:relative;z-index:1;}
+.hero-cta:active{transform:scale(.97);}
+
+.mod-section{padding:20px 18px 8px;}
+.mod-section h2{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:13px;}
+.mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.mod{background:#fff;border-radius:var(--r);padding:15px;border:1px solid var(--border);cursor:pointer;transition:transform .15s,border-color .15s;display:flex;flex-direction:column;gap:8px;}
+.mod:active{transform:scale(.97);}
+.mod-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.mod h3{font-size:13px;font-weight:600;color:var(--text);margin:0;}
+.mod p{font-size:11px;color:var(--muted);margin:0;}
+
+.tip-card{margin:12px 18px 20px;background:#fff;border-radius:var(--r);padding:14px;border:1px solid #ffe082;border-left:3px solid var(--org);display:flex;gap:11px;}
+.tip-card .ico{font-size:18px;flex-shrink:0;margin-top:1px;}
+.tip-card h4{font-size:13px;font-weight:600;color:#5d4037;margin-bottom:3px;}
+.tip-card p{font-size:12px;color:#795548;line-height:1.55;}
+
+/* ── TEST ── */
+.test-hdr{background:var(--gd);padding:20px 18px 18px;flex-shrink:0;}
+.test-hdr .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.q-count{font-size:11px;color:rgba(255,255,255,0.5);}
+.prog-track{background:rgba(255,255,255,0.15);border-radius:4px;height:3px;margin-bottom:12px;}
+.prog-fill{background:#7ed87e;border-radius:4px;height:3px;transition:width .4s ease;}
+.q-text{color:#fff;font-family:var(--fd);font-size:18px;line-height:1.4;}
+
+.test-img-wrap{flex-shrink:0;height:160px;overflow:hidden;background:#e8f5e8;display:flex;align-items:center;justify-content:center;}
+.test-illus{font-size:80px;line-height:1;}
+
+.test-body{padding:16px 18px;flex:1;overflow-y:auto;}
+.q-opt{background:#fff;border:1.5px solid var(--border);border-radius:var(--r);padding:13px 15px;margin-bottom:9px;font-size:14px;color:var(--text);cursor:pointer;transition:all .15s;width:100%;text-align:left;font-family:var(--ff);}
+.q-opt.sel{border-color:var(--gm);background:var(--gl);color:var(--gd);font-weight:600;}
+.test-foot{padding:10px 18px 18px;flex-shrink:0;}
+.btn-full{width:100%;background:var(--gm);color:#fff;border:none;border-radius:24px;padding:14px;font-size:15px;font-weight:600;font-family:var(--ff);cursor:pointer;transition:transform .15s;}
+.btn-full:active{transform:scale(.98);}
+.btn-full:disabled{opacity:.3;cursor:default;}
+
+/* ── RESULTADO ── */
+.res-hdr{background:var(--gd);padding:26px 22px 22px;text-align:center;flex-shrink:0;}
+.res-emoji{font-size:40px;margin-bottom:8px;}
+.res-tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:4px 13px;border-radius:20px;margin-bottom:8px;}
+.res-hdr h2{font-family:var(--fd);font-size:23px;color:#fff;margin-bottom:4px;}
+.res-hdr p{color:rgba(255,255,255,0.62);font-size:13px;}
+.res-body{padding:18px;}
+.sec-lbl{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:10px;}
+.rec-item{border-left:3px solid var(--gm);background:#fff;border-radius:0 10px 10px 0;padding:11px 13px;margin-bottom:9px;}
+.rec-item p{font-size:13px;line-height:1.6;}
+.cta-card{background:var(--gd);border-radius:var(--r);padding:15px;margin-top:16px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:transform .15s;}
+.cta-card:active{transform:scale(.98);}
+.cta-card h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:2px;}
+.cta-card p{color:rgba(255,255,255,0.6);font-size:12px;}
+.cta-arr{color:#7ed87e;font-size:22px;margin-left:auto;}
+
+/* ── COCINA ── */
+.cocina-head{padding:14px 18px 10px;background:#fff;border-bottom:1px solid var(--border);flex-shrink:0;}
+.cocina-head p{font-size:13px;color:var(--muted);}
+.search-wrap{margin-top:10px;position:relative;}
+.search-wrap input{width:100%;padding:9px 14px 9px 36px;border:1px solid var(--border);border-radius:24px;font-size:13px;font-family:var(--ff);background:#f5f5f5;outline:none;}
+.search-ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;}
+.filter-row{display:flex;gap:7px;padding:10px 18px 0;overflow-x:auto;flex-shrink:0;scrollbar-width:none;}
+.filter-row::-webkit-scrollbar{display:none;}
+.f-chip{white-space:nowrap;font-size:12px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:#fff;cursor:pointer;font-family:var(--ff);transition:all .15s;}
+.f-chip.active{background:var(--gm);color:#fff;border-color:var(--gm);}
+.prod-list{padding:8px 18px;}
+.prod-row{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:opacity .15s;}
+.prod-row:last-child{border-bottom:none;}
+.prod-row:active{opacity:.7;}
+.prod-emoji{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.prod-info h4{font-size:14px;font-weight:600;margin-bottom:2px;}
+.prod-info p{font-size:11px;color:var(--muted);}
+.risk-tag{font-size:10px;padding:3px 9px;border-radius:20px;flex-shrink:0;font-weight:600;}
+.rh{background:var(--rh-bg);color:var(--rh-c);}
+.rm{background:var(--rm-bg);color:var(--rm-c);}
+.rl{background:var(--rl-bg);color:var(--rl-c);}
+.empty-state{text-align:center;padding:30px 20px;color:var(--muted);font-size:14px;}
+
+/* ── PRODUCTO DETALLE ── */
+.det-hero{background:#fff;padding:20px 18px 16px;border-bottom:1px solid var(--border);flex-shrink:0;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.det-big-emoji{font-size:64px;line-height:1;margin-bottom:10px;}
+.det-hero h2{font-family:var(--fd);font-size:20px;color:var(--gd);margin-bottom:6px;}
+.fact{background:#fff;border-radius:var(--r);padding:13px 15px;margin-bottom:11px;border:1px solid var(--border);}
+.fact-lbl{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
+.fact p{font-size:13px;line-height:1.65;color:var(--text);}
+.alt-title{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:14px 0 8px;}
+.alt-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.alt-chip{background:var(--gl);color:var(--gd);font-size:12px;padding:5px 11px;border-radius:20px;border:1px solid var(--gs);}
+.det-body{padding:16px 18px;}
+
+/* ── ALERTAS ── */
+.alert-body{padding:14px 18px;}
+.alert-card{background:#fff;border-radius:var(--r);margin-bottom:12px;border:1px solid var(--border);overflow:hidden;}
+.ac-icon-strip{padding:20px;display:flex;align-items:center;justify-content:center;font-size:48px;}
+.ac-body{padding:0 14px 14px;}
+.ac-tag{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:20px;margin-bottom:8px;}
+.alert-card h3{font-family:var(--fd);font-size:15px;margin-bottom:5px;line-height:1.3;color:var(--gd);}
+.alert-card p{font-size:13px;color:var(--muted);line-height:1.65;}
+.alert-card .accion{margin-top:9px;font-size:12px;color:var(--gm);font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:4px;}
+
+/* ── MARKET ── */
+.mkt-hero{background:var(--gd);padding:20px 20px 18px;flex-shrink:0;}
+.mkt-hero .mkt-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.mkt-hero h2{font-family:var(--fd);font-size:20px;color:#fff;margin-bottom:3px;}
+.mkt-sub{color:rgba(255,255,255,0.6);font-size:12px;margin-bottom:10px;}
+.info-chips{display:flex;gap:7px;flex-wrap:wrap;}
+.info-chip{background:rgba(255,255,255,0.13);color:rgba(255,255,255,0.88);font-size:11px;padding:5px 10px;border-radius:20px;}
+
+.mkt-about{margin:14px 18px 0;background:#fff;border-radius:var(--r);padding:16px;border:1px solid var(--border);}
+.mkt-about h4{font-family:var(--fd);font-size:15px;color:var(--gd);margin-bottom:6px;}
+.mkt-about p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:10px;}
+.mkt-about p:last-child{margin-bottom:0;}
+.eco-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gl);border:1px solid var(--gs);border-radius:20px;padding:5px 12px;font-size:11px;color:var(--gd);font-weight:600;margin-top:4px;}
+
+.map-block{background:#c8e6c9;margin:13px 18px 0;border-radius:var(--r);height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid #a5d6a7;cursor:pointer;transition:opacity .15s;}
+.map-block:active{opacity:.8;}
+.map-pin{width:13px;height:13px;background:var(--gd);border-radius:50% 50% 50% 0;transform:rotate(-45deg);}
+.map-block span{font-size:12px;color:#1b5e20;font-weight:600;}
+.map-block small{font-size:10px;color:#388e3c;}
+
+.legend{display:flex;gap:13px;flex-wrap:wrap;padding:10px 18px 4px;}
+.leg{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted);}
+.leg-dot{width:8px;height:8px;border-radius:50%;}
+.cal-body{padding:10px 18px 8px;}
+.cal-yr{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;margin-bottom:10px;}
+.mo{margin-bottom:12px;}
+.mo-name{font-size:12px;font-weight:600;color:var(--gm);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.dates-row{display:flex;flex-wrap:wrap;gap:6px;}
+.dp{border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:12px;color:var(--text);background:#fff;}
+.dp.past{opacity:.35;}
+.dp.next{background:var(--gm);color:#fff;border-color:var(--gm);font-weight:600;}
+.dp.soon{background:var(--gl);color:#1b5e20;border-color:var(--gs);}
+
+.prods-section{padding:0 18px 10px;}
+.prods-section h4{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px;}
+.prod-chips-wrap{display:flex;flex-wrap:wrap;gap:7px;}
+.pc{background:#fff;border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;}
+
+.mkt-actions{display:flex;gap:9px;padding:12px 18px 18px;flex-shrink:0;}
+.btn-outline{flex:1;background:#fff;color:var(--text);border:1px solid var(--border);border-radius:24px;padding:11px 8px;font-size:13px;font-family:var(--ff);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:transform .15s;}
+.btn-outline:active{transform:scale(.97);}
+.btn-green{flex:1;background:var(--gm);color:#fff;border:none;border-radius:24px;padding:11px 8px;font-size:13px;font-weight:600;font-family:var(--ff);cursor:pointer;transition:transform .15s;}
+.btn-green:active{transform:scale(.97);}
+
+/* BOTTOM NAV */
+.bnav-wrap{display:flex;background:#fff;border-top:1px solid var(--border);padding:7px 0 env(safe-area-inset-bottom,7px);flex-shrink:0;}
+.bnav{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:3px 0;}
+.bnav svg{width:21px;height:21px;color:var(--muted);}
+.bnav span{font-size:10px;color:var(--muted);}
+.bnav.active svg,.bnav.active span{color:var(--gm);}
+.bnav.active span{font-weight:600;}
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- ══ HOME ══ -->
+<div id="s-home" class="screen active">
+<div class="sb">
+  <div class="hero" id="home-hero">
+    <!-- Viva Market SVG Logo — sin fondo -->
+    <svg class="logo-svg" width="180" height="62" viewBox="0 0 180 62" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:10px;position:relative;z-index:1;">
+      <!-- Leaf left -->
+      <ellipse cx="18" cy="22" rx="10" ry="16" fill="#5cb85c" transform="rotate(-30 18 22)"/>
+      <line x1="18" y1="10" x2="16" y2="30" stroke="#3a8a3a" stroke-width="1.2"/>
+      <!-- Leaf right -->
+      <ellipse cx="36" cy="18" rx="10" ry="16" fill="#4cae4c" transform="rotate(15 36 18)"/>
+      <line x1="36" y1="8" x2="35" y2="28" stroke="#3a8a3a" stroke-width="1.2"/>
+      <!-- "Viva" text -->
+      <text x="50" y="28" font-family="Playfair Display, serif" font-size="22" font-weight="600" fill="#ffffff" letter-spacing="0.5">Viva</text>
+      <!-- "market" text -->
+      <text x="50" y="50" font-family="Playfair Display, serif" font-size="22" font-style="italic" fill="#e07c24" letter-spacing="0.5">market</text>
+    </svg>
+    <p class="hero-sub">Descubre los pesticidas y ultraprocesados que tu familia consume sin saberlo. Conoce alternativas reales cerca de ti.</p>
+    <button class="hero-cta" onclick="go('s-test');track('cta_click',{cta:'hero_hacer_test'});">Hacer el test →</button>
+  </div>
+
+  <div class="mod-section">
+    <h2>Explorar</h2>
+    <div class="mod-grid">
+      <div class="mod" onclick="go('s-test')">
+        <div class="mod-icon" style="background:#e8f5e8;">📋</div>
+        <h3>Test de hábitos</h3>
+        <p>Descubre tu perfil de consumo familiar</p>
+      </div>
+      <div class="mod" onclick="go('s-cocina')">
+        <div class="mod-icon" style="background:#fff3e0;">🧺</div>
+        <h3>Tu cocina diaria</h3>
+        <p>+100 alimentos con nivel de riesgo</p>
+      </div>
+      <div class="mod" onclick="go('s-alertas')">
+        <div class="mod-icon" style="background:#fce4ec;">⚠️</div>
+        <h3>Alertas</h3>
+        <p>Datos que debes conocer</p>
+      </div>
+      <div class="mod" onclick="go('s-market')">
+        <div class="mod-icon" style="background:#e8f5e8;">🌿</div>
+        <h3>Viva Market</h3>
+        <p>Feria ecológica · Los Ceibos</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-card">
+    <div class="ico">💡</div>
+    <div>
+      <h4>¿Sabías que…?</h4>
+      <p>Las frutillas pueden contener hasta 22 residuos de pesticidas distintos. El efecto es silencioso y acumulativo en el organismo.</p>
+    </div>
+  </div>
+</div>
+<nav class="bnav-wrap">
+  <div class="bnav active" onclick="go('s-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12L12 3l9 9M5 10v10h5v-6h4v6h5V10"/></svg><span>Inicio</span></div>
+  <div class="bnav" onclick="go('s-test')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M8 8h5"/></svg><span>Test</span></div>
+  <div class="bnav" onclick="go('s-cocina')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 10h12l-2 11H8L6 10z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg><span>Cocina</span></div>
+  <div class="bnav" onclick="go('s-market')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8.5 2 6 4.5 6 8c0 4 6 12 6 12s6-8 6-12c0-3.5-2.5-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg><span>Feria</span></div>
+</nav>
+</div>
+
+<!-- ══ TEST ══ -->
+<div id="s-test" class="screen">
+<div class="test-hdr">
+  <div class="row">
+    <button class="back" style="color:rgba(255,255,255,0.7)" onclick="go('s-home')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Inicio
+    </button>
+    <span class="q-count" id="q-count">1 de 5</span>
+  </div>
+  <div class="prog-track"><div class="prog-fill" id="q-prog" style="width:20%"></div></div>
+  <p class="q-text" id="q-text">¿Cuántas veces por semana compras frutas y verduras frescas?</p>
+</div>
+<div class="test-img-wrap" id="test-img-wrap">
+  <span class="test-illus" id="test-illus">🥦</span>
+</div>
+<div class="test-body" id="q-opts"></div>
+<div class="test-foot"><button class="btn-full" id="q-next" onclick="nextQ()" disabled>Siguiente →</button></div>
+</div>
+
+<!-- ══ RESULTADO ══ -->
+<div id="s-resultado" class="screen">
+<div class="res-hdr">
+  <div class="res-emoji" id="res-emoji">😐</div>
+  <div class="res-tag" id="res-tag">Riesgo moderado</div>
+  <h2 id="res-title">Consumo con alertas</h2>
+  <p id="res-sub">Tu familia está expuesta a algunos riesgos que se pueden reducir.</p>
+</div>
+<div class="sb">
+  <div class="res-body">
+    <p class="sec-lbl">Lo que encontramos</p>
+    <div id="res-recs"></div>
+    <div class="cta-card" onclick="go('s-market')">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#7ed87e" stroke-width="1.5"/><path d="M10 17l4 4 8-8" stroke="#7ed87e" stroke-width="2"/></svg>
+      <div><h4>Tu mejor siguiente paso</h4><p>Compra en Viva Market EC →</p></div>
+      <span class="cta-arr">›</span>
+    </div>
+  </div>
+</div>
+<div style="padding:10px 18px 18px;flex-shrink:0;">
+  <button class="btn-full" onclick="go('s-cocina')">Explorar tu cocina diaria →</button>
+</div>
+</div>
+
+<!-- ══ COCINA ══ -->
+<div id="s-cocina" class="screen">
+<div class="topbar">
+  <button class="back" onclick="go('s-home')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Inicio</button>
+  <span class="topbar-title">Tu cocina diaria</span>
+  <span style="width:55px"></span>
+</div>
+<div class="cocina-head">
+  <p>Toca un alimento para ver su análisis completo.</p>
+  <div class="search-wrap">
+    <span class="search-ico">🔍</span>
+    <input type="text" id="search-inp" placeholder="Buscar alimento…" oninput="filterProds()" autocomplete="off">
+  </div>
+</div>
+<div class="filter-row">
+  <button class="f-chip active" onclick="setFilter('todos',this)">Todos</button>
+  <button class="f-chip" onclick="setFilter('alto',this)">Riesgo alto</button>
+  <button class="f-chip" onclick="setFilter('moderado',this)">Moderado</button>
+  <button class="f-chip" onclick="setFilter('bajo',this)">Bajo riesgo</button>
+</div>
+<div class="sb"><div class="prod-list" id="prod-list"></div></div>
+</div>
+
+<!-- ══ PRODUCTO DETALLE ══ -->
+<div id="s-producto" class="screen">
+<div class="topbar">
+  <button class="back" onclick="go('s-cocina')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Cocina</button>
+  <span class="topbar-title" id="det-title-bar"></span>
+  <span style="width:55px"></span>
+</div>
+<div class="sb">
+  <div class="det-hero">
+    <div class="det-big-emoji" id="det-emoji"></div>
+    <h2 id="det-name"></h2>
+    <div id="det-risk"></div>
+  </div>
+  <div class="det-body" id="det-body"></div>
+</div>
+</div>
+
+<!-- ══ ALERTAS ══ -->
+<div id="s-alertas" class="screen">
+<div class="topbar">
+  <button class="back" onclick="go('s-home')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Inicio</button>
+  <span class="topbar-title">Alertas educativas</span>
+  <span style="width:55px"></span>
+</div>
+<div class="sb"><div class="alert-body" id="alert-body"></div></div>
+</div>
+
+<!-- ══ MARKET ══ -->
+<div id="s-market" class="screen">
+<div class="mkt-hero">
+  <div class="mkt-row">
+    <button class="back" style="color:rgba(255,255,255,0.65)" onclick="go('s-home')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Inicio</button>
+    <!-- Logo sin fondo en header -->
+    <svg width="110" height="38" viewBox="0 0 180 62" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="18" cy="22" rx="10" ry="16" fill="#5cb85c" transform="rotate(-30 18 22)"/>
+      <line x1="18" y1="10" x2="16" y2="30" stroke="#3a8a3a" stroke-width="1.2"/>
+      <ellipse cx="36" cy="18" rx="10" ry="16" fill="#4cae4c" transform="rotate(15 36 18)"/>
+      <line x1="36" y1="8" x2="35" y2="28" stroke="#3a8a3a" stroke-width="1.2"/>
+      <text x="50" y="28" font-family="Playfair Display, serif" font-size="22" font-weight="600" fill="#ffffff" letter-spacing="0.5">Viva</text>
+      <text x="50" y="50" font-family="Playfair Display, serif" font-size="22" font-style="italic" fill="#e07c24" letter-spacing="0.5">market</text>
+    </svg>
+    <span style="width:55px"></span>
+  </div>
+  <p class="mkt-sub">Colegio Alemán Humboldt · Los Ceibos, Guayaquil</p>
+  <div class="info-chips">
+    <div class="info-chip">⏰ 09:00 – 13:00</div>
+    <div class="info-chip">📅 Cada 15 días · Sábados</div>
+    <div class="info-chip">🎟️ Entrada libre</div>
+  </div>
+</div>
+
+<div class="sb">
+  <!-- About Viva Market -->
+  <div class="mkt-about">
+    <h4>¿Qué es Viva Market?</h4>
+    <p>Viva Market EC es una feria agroecológica que conecta directamente a productores locales con familias de Guayaquil. Aquí encuentras alimentos frescos, sin químicos y con historia: sabes quién los cultivó, cómo y dónde.</p>
+    <p>Es un espacio que apuesta por el <strong>comercio justo</strong> — un modelo donde el productor recibe el precio que merece y el consumidor accede a alimentos de calidad real, sin intermediarios que encarecen y desconectan.</p>
+    <div class="eco-badge">
+      🌱 Proyecto de Fundación Ecoesfera Initiative
+    </div>
+    <p style="margin-top:10px;font-size:12px;">Ecoesfera Initiative trabaja para <strong>democratizar el acceso a la agroecología</strong> en Guayaquil, acercando el campo a la ciudad y construyendo una red de consumo consciente, local y sostenible.</p>
+  </div>
+
+  <div class="map-block" onclick="track('link_externo',{destino:'google_maps_humboldt'});window.open('https://maps.google.com/?q=Colegio+Aleman+Humboldt+Guayaquil','_blank')">
+    <div class="map-pin"></div>
+    <span>Colegio Alemán Humboldt · Los Ceibos</span>
+    <small>Ver ubicación en Google Maps →</small>
+  </div>
+
+  <div class="legend" style="margin-top:10px;">
+    <div class="leg"><div class="leg-dot" style="background:var(--gm)"></div>Próxima fecha</div>
+    <div class="leg"><div class="leg-dot" style="background:#a5d6a7"></div>Por venir</div>
+    <div class="leg"><div class="leg-dot" style="background:#ccc"></div>Pasada</div>
+  </div>
+  <div class="cal-body">
+    <div class="cal-yr">Calendario 2026</div>
+    <div id="cal-grid"></div>
+  </div>
+
+  <div class="prods-section">
+    <h4>Encuentras aquí</h4>
+    <div class="prod-chips-wrap">
+      <span class="pc">🥕 Frutas y verduras sin químicos</span>
+      <span class="pc">🥩 Embutidos artesanales</span>
+      <span class="pc">🍞 Pan de masa madre</span>
+      <span class="pc">🍫 Chocolate ecuatoriano</span>
+      <span class="pc">🌿 Cosmética natural</span>
+      <span class="pc">🧴 Jabones artesanales</span>
+      <span class="pc">🍯 Miel de abeja pura</span>
+      <span class="pc">♻️ Limpieza ecológica</span>
+      <span class="pc">🧀 Fermentados y kéfir</span>
+      <span class="pc">🌾 Granola artesanal</span>
+      <span class="pc">🫙 Salsas y aderezos naturales</span>
+      <span class="pc">🎨 Artesanías locales</span>
+    </div>
+  </div>
+</div>
+
+<div class="mkt-actions">
+  <button class="btn-outline" onclick="track('link_externo',{destino:'instagram_vivamarketec'});window.open('https://instagram.com/vivamarketec','_blank')">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1.5" y="1.5" width="12" height="12" rx="3.5" stroke="currentColor" stroke-width="1.3"/><circle cx="7.5" cy="7.5" r="2.8" stroke="currentColor" stroke-width="1.3"/><circle cx="11" cy="4" r="0.8" fill="currentColor"/></svg>
+    @vivamarketec
+  </button>
+  <button class="btn-green" onclick="track('recordatorio_activado',{fecha:'25_abril'});alert('¡Recordatorio activado!\nPróxima feria: sábado 25 de abril\n9:00 AM · Colegio Alemán Humboldt')">🔔 Recordarme</button>
+</div>
+</div>
+
+</div><!-- /app -->
+
+<script>
+// ── DATOS ──
+const TEST_EMOJIS = ["🥦","🛒","🍟","🌽","🫧"];
+
+const PREGUNTAS = [
+  {t:"¿Cuántas veces por semana compras frutas y verduras frescas?",e:"🥕",o:["Todos los días","3 a 4 veces","1 a 2 veces","Casi nunca"],p:[0,1,2,3]},
+  {t:"¿Con qué frecuencia revisas los ingredientes de los productos empacados?",e:"🔍",o:["Siempre lo hago","A veces, si me acuerdo","Casi nunca","Nunca lo hago"],p:[0,1,2,3]},
+  {t:"¿Con qué frecuencia consumen snacks, jugos de caja o embutidos en tu hogar?",e:"🍟",o:["Raramente","1 a 2 veces por semana","Casi todos los días","Todos los días"],p:[0,1,2,3]},
+  {t:"¿Sabes de dónde provienen las frutas y verduras que compras?",e:"🌱",o:["Sí, compro a productores locales","A veces pregunto","No suelo preguntar","No me había preguntado"],p:[0,1,2,3]},
+  {t:"¿Cómo lavas las frutas y verduras antes de consumirlas?",e:"🫧",o:["Con bicarbonato o vinagre","Solo con agua abundante","Solo las enjuago rápido","No siempre las lavo"],p:[0,1,2,3]}
+];
+
+const PERFILES = [
+  {min:0,max:4,emoji:"🌱",tag:"Consumo consciente",ts:"background:#e8f5e8;color:#1b5e20;",titulo:"¡Excelente hábito!",sub:"Tu familia ya tiene un consumo bastante saludable. Sigue perfeccionando.",recs:["Mantienes buenos hábitos de compra y lectura de etiquetas.","Lavar bien los alimentos protege de residuos superficiales.","Visita Viva Market para acceder a productores agroecológicos certificados."]},
+  {min:5,max:9,emoji:"😐",tag:"Riesgo moderado",ts:"background:#fff3e0;color:#e65100;",titulo:"Consumo con alertas",sub:"Hay hábitos que puedes mejorar fácilmente para proteger a tu familia.",recs:["Revisas etiquetas solo a veces — los aditivos más riesgosos suelen esconderse allí.","El consumo frecuente de ultraprocesados tiene efectos acumulativos en niños.","Conocer el origen de tus alimentos marca una gran diferencia."]},
+  {min:10,max:15,emoji:"⚠️",tag:"Riesgo alto",ts:"background:#fce4ec;color:#880e4f;",titulo:"Es momento de actuar",sub:"Tu familia podría estar acumulando pesticidas y aditivos sin saberlo. Los cambios son simples.",recs:["La exposición acumulada a pesticidas afecta especialmente a niños menores de 10 años.","Varios ultraprocesados en tu dieta diaria aumentan el riesgo de enfermedades crónicas.","Cambiar dónde compras puede reducir significativamente tu exposición."]}
+];
+
+const PRODUCTOS = [
+  // RIESGO ALTO
+  {id:1,e:"🍓",n:"Frutillas",c:"Fruta · Importada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Las frutillas encabezan las listas de frutas con mayor residuo de pesticidas. Se han documentado hasta 22 pesticidas distintos en una sola muestra comercial.",efe:"El consumo frecuente sin lavado adecuado se asocia a alteraciones hormonales, especialmente en niños menores de 10 años. El efecto es acumulativo y silencioso.",lav:"Remojar 15 min en agua con bicarbonato (1 cucharada por litro) reduce hasta el 80% de residuos superficiales. Lavar hoja por hoja.",alts:["Frutillas agroecológicas","Mora nacional","Tomate de árbol","Taxo"]},
+  {id:2,e:"🍇",n:"Uvas importadas",c:"Fruta · Importada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Las uvas se encuentran consistentemente entre las frutas más contaminadas con pesticidas sistémicos, incluyendo fungicidas de alta toxicidad.",efe:"Los pesticidas sistémicos no se eliminan con el lavado superficial: se absorben a través de la piel. Riesgo alto con consumo frecuente.",lav:"Lavar con agua tibia y bicarbonato. Evitar uvas importadas sin certificación orgánica.",alts:["Mora nacional","Tomate de árbol","Taxo","Frutas locales de temporada"]},
+  {id:3,e:"🍑",n:"Durazno / Melocotón",c:"Fruta · Importada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los duraznos están entre las frutas con mayor número de residuos de pesticidas detectados a nivel global. Su piel delgada ofrece poca protección.",efe:"La piel delgada facilita la absorción de pesticidas. El consumo regular puede acumular niveles significativos, especialmente en niños.",lav:"Lavar con bicarbonato y pelar siempre si es importado. Preferir versiones locales o de temporada.",alts:["Mango local","Papaya","Maracuyá nacional"]},
+  {id:4,e:"🍒",n:"Cerezas importadas",c:"Fruta · Importada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Las cerezas presentan altos niveles de múltiples pesticidas, incluyendo fungicidas y herbicidas. Su piel fina no ofrece protección.",efe:"Alta probabilidad de residuos sistémicos que no se eliminan con lavado. Especialmente riesgosas para niños.",lav:"Preferir frutas locales. No hay método de lavado que elimine los pesticidas sistémicos en cerezas importadas.",alts:["Arándanos locales","Mora nacional","Tomate de árbol"]},
+  {id:5,e:"🫐",n:"Arándanos importados",c:"Fruta · Importada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los arándanos importados presentan múltiples pesticidas incluyendo fungicidas usados en postcosecha para aguantar el transporte largo.",efe:"Piel fina sin protección. Los pesticidas penetran fácilmente. Riesgo alto con consumo frecuente.",lav:"Lavar con agua y bicarbonato. Preferir versiones orgánicas certificadas o frutas locales equivalentes.",alts:["Mora nacional","Tomate de árbol","Taxo","Frutas de temporada local"]},
+  {id:6,e:"🍎",n:"Manzana importada",c:"Fruta · Importada",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las manzanas importadas tienen cera aplicada para conservación que retiene pesticidas en la superficie.",efe:"La cáscara concentra residuos. Riesgo moderado con lavado adecuado y pelado.",lav:"Frota con cepillo bajo agua. Pelar la cáscara elimina la mayoría de residuos. Recomendable en niños.",alts:["Guayaba local","Pera nacional","Mango local","Papaya"]},
+  {id:7,e:"🥬",n:"Espinaca",c:"Verdura · Cultivada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"La espinaca acumula múltiples tipos de pesticidas en sus hojas, incluyendo algunos neurotóxicos. Sus hojas porosas retienen residuos.",efe:"Riesgo elevado en niños. Las hojas absorben y retienen pesticidas difíciles de eliminar con lavado simple.",lav:"Lavar hoja por hoja bajo agua corriente. Remojar en agua con bicarbonato 10 minutos. Cambiar agua.",alts:["Espinaca orgánica de Viva Market","Col rizada local","Acelga de productores locales"]},
+  {id:8,e:"🌶️",n:"Pimiento",c:"Verdura · Cultivada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los pimientos importados presentan residuos de hasta 15 tipos distintos de pesticidas. Su piel delgada y rugosa retiene pesticidas.",efe:"Lavado superficial insuficiente para pesticidas sistémicos. Especialmente problemático para niños.",lav:"Lavar con agua y bicarbonato. Si es importado, preferir pelarlo o usar versiones locales de feria.",alts:["Pimiento local de feria","Tomate nacional","Ajíes locales"]},
+  {id:9,e:"🧅",n:"Apio",c:"Verdura · Cultivada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"El apio acumula más de 60 tipos distintos de pesticidas detectados en análisis internacionales. Es uno de los alimentos con mayor carga pesticida documentada.",efe:"Sus tallos y hojas absorben pesticidas fácilmente. Riesgo elevado en niños y embarazadas.",lav:"Lavar cada tallo individualmente. Remover hojas externas. Remojar en bicarbonato 15 minutos.",alts:["Apio orgánico","Hierbas locales frescas","Culantro local"]},
+  {id:10,e:"🍅",n:"Tomate importado",c:"Verdura · Importada",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los tomates importados son tratados con etileno para maduración artificial y fungicidas para conservación en tránsito largo.",efe:"Residuos de fungicidas sistémicos no se eliminan solo con agua. El consumo frecuente suma exposición acumulada.",lav:"Preferir tomate nacional. Si es importado, remojar en agua con vinagre blanco durante 10 minutos.",alts:["Tomate nacional","Tomate cherry local","Tomate de productores en Viva Market"]},
+  {id:11,e:"🍋",n:"Limón importado",c:"Cítrico · Importado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los limones importados suelen tratarse con fungicidas post-cosecha en la cáscara para conservación en tránsito.",efe:"Riesgo alto si se consume la cáscara (zest) sin lavar. La pulpa tiene bajo riesgo si se pela correctamente.",lav:"Lavar con agua caliente y fregar con cepillo. Si es importado, no usar la cáscara en preparaciones.",alts:["Limón local ecuatoriano","Lima nacional","Lima de Viva Market"]},
+  {id:12,e:"🌽",n:"Maíz transgénico",c:"Cereal · Cultivado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"El maíz transgénico convencional tiene alto uso de herbicidas como glifosato durante su cultivo. El glifosato está clasificado como probable carcinógeno por la OMS.",efe:"El glifosato tiene potencial disruptor endócrino. Residuos se encuentran en productos derivados de maíz.",lav:"Preferir maíz choclo local y de temporada. Verificar origen agroecológico.",alts:["Choclo nacional de temporada","Maíz morado","Maíz de productores locales"]},
+  {id:13,e:"🧃",n:"Jugo de caja",c:"Bebida · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los jugos de caja contienen entre 3 y 6 cucharaditas de azúcar por porción, colorantes artificiales y conservantes. No tienen fruta real significativa.",efe:"El consumo regular en niños está relacionado con sobrepeso, resistencia a la insulina y caries. No aporta nutrientes reales.",lav:"Reemplazar con agua de fruta natural hecha en casa usando frutas locales frescas.",alts:["Agua de maracuyá natural","Jugo de naranja exprimido","Agua de coco natural"]},
+  {id:14,e:"🥩",n:"Mortadela / embutidos",c:"Embutido · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los embutidos industriales contienen nitritos, fosfatos y sodio elevados. La OMS los clasifica como carcinógenos del grupo 1.",efe:"El consumo habitual se asocia a mayor riesgo de cáncer colorrectal, hipertensión y enfermedades cardiovasculares.",lav:"Reducir a máximo 1 vez por semana. Buscar embutidos artesanales sin nitritos añadidos en Viva Market.",alts:["Embutidos artesanales Viva Market","Pollo cocido casero","Huevo","Atún en agua"]},
+  {id:15,e:"🌭",n:"Salchichas industriales",c:"Embutido · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Contienen hasta 20 aditivos diferentes: nitritos, fosfatos, potenciadores de sabor, colorantes artificiales y conservantes.",efe:"Múltiples aditivos con efectos acumulativos. Especialmente problemáticos para niños menores de 12 años.",lav:"Evitar o reemplazar totalmente. Nunca como alimento cotidiano en la dieta infantil.",alts:["Proteína natural","Huevo revuelto","Pollo sin procesar","Embutidos artesanales"]},
+  {id:16,e:"🍗",n:"Nuggets de pollo",c:"Carne · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los nuggets contienen entre 30 y 50% de carne real. El resto son aditivos, rellenos y almidones modificados.",efe:"Alto contenido de sodio, grasas trans y aditivos. El consumo frecuente contribuye a obesidad infantil.",lav:"Reemplazar con pollo natural preparado en casa. Simple y significativamente más saludable.",alts:["Pollo asado casero","Pechuga natural","Carne de res sin procesar"]},
+  {id:17,e:"🍟",n:"Papas fritas empacadas",c:"Snack · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Contienen acrilamida (formada al freír a alta temperatura), potenciadores de sabor artificiales y sodio en exceso.",efe:"La acrilamida es un probable carcinógeno según la OMS. Alto contenido de sodio y grasas saturadas.",lav:"Reemplazar con papas horneadas caseras o snacks naturales.",alts:["Chifles de plátano natural","Papa horneada casera","Maíz tostado local"]},
+  {id:18,e:"🧂",n:"Sopas instantáneas",c:"Comida · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Contienen MSG (glutamato monosódico), hasta 900mg de sodio por porción (casi el límite diario recomendado) y múltiples aditivos artificiales.",efe:"El sodio excesivo afecta la presión arterial. El MSG puede generar dependencia y exceso de consumo.",lav:"Preparar sopas caseras con verduras frescas. Son igual de rápidas con el hábito.",alts:["Sopa de verduras casera","Caldo de pollo natural","Locro de papa artesanal"]},
+  {id:19,e:"🍬",n:"Caramelos y gummies",c:"Dulce · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Contienen colorantes artificiales (tartrazina, rojo 40), gelatina, azúcar en exceso y saborizantes artificiales.",efe:"Los colorantes artificiales están asociados a hiperactividad infantil. Sin valor nutricional. Adictivos para niños.",lav:"Evitar totalmente en niños. Reemplazar con frutas frescas de temporada.",alts:["Frutas frescas de temporada","Frutas deshidratadas naturales","Panela con maní"]},
+  {id:20,e:"🧈",n:"Margarina",c:"Grasa · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"La margarina tradicional contiene grasas parcialmente hidrogenadas (trans), que son de los compuestos más dañinos para el sistema cardiovascular.",efe:"Las grasas trans aumentan el colesterol malo y reducen el bueno. Están siendo prohibidas en múltiples países.",lav:"Reemplazar con mantequilla real o aceite de coco para cocción.",alts:["Mantequilla natural","Aceite de coco","Ghee artesanal de Viva Market"]},
+  {id:21,e:"🫕",n:"Caldo en cubitos",c:"Condimento · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los cubitos de caldo tienen MSG, sal en niveles altísimos (hasta 60% del límite diario recomendado por cubo) y colorantes.",efe:"El sodio excesivo es el principal problema. Consumo habitual asociado a hipertensión y problemas renales.",lav:"Preparar caldo casero con verduras, hueso o pollo. Simple y mucho más nutritivo.",alts:["Caldo casero de verduras","Hierbas aromáticas frescas","Caldo de pollo natural"]},
+  {id:22,e:"🍩",n:"Donas y pasteles industriales",c:"Pastelería · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Contienen grasas trans, azúcar refinada, harina blanca sin nutrientes, colorantes y conservantes artificiales.",efe:"Altísimo índice glucémico. Grasas trans. Prácticamente ningún valor nutricional real.",lav:"Preparar en casa con ingredientes simples para ocasiones especiales.",alts:["Bizcocho casero de plátano","Pan de masa madre dulce de Viva Market","Frutas naturales"]},
+  {id:23,e:"🥤",n:"Gaseosas / refrescos",c:"Bebida · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Las gaseosas contienen ácido fosfórico, azúcar o edulcorantes artificiales, colorantes y cafeína.",efe:"El ácido fosfórico afecta la absorción de calcio. Azúcar excesiva. Sin valor nutricional real.",lav:"Reemplazar con agua natural, agua de fruta o infusiones de hierbas.",alts:["Agua natural","Agua de Jamaica","Jugo de caña artesanal","Infusión de hierba luisa"]},
+  {id:24,e:"🍺",n:"Bebidas energizantes",c:"Bebida · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Contienen cafeína en dosis elevadas, taurina, colorantes artificiales y azúcar en cantidades alarmantes.",efe:"Pueden causar taquicardia, insomnio y ansiedad. Absolutamente contraindicadas en menores de 18 años.",lav:"Evitar completamente, especialmente en adolescentes y niños.",alts:["Agua de coco","Jugo de naranja natural","Infusión de menta y jengibre"]},
+  {id:25,e:"🎂",n:"Cereales de desayuno azucarados",c:"Cereal · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Los cereales industriales tienen azúcar como primer ingrediente, colorantes artificiales y vitaminas sintéticas añadidas para aparentar valor nutricional.",efe:"El pico glucémico temprano genera hambre y mal humor pocas horas después. Alta carga de azúcar.",lav:"Reemplazar con avena natural o granola artesanal sin azúcar añadida.",alts:["Granola Feliz de Viva Market","Avena natural cocida","Quinua con frutas de temporada"]},
+  {id:26,e:"🍿",n:"Palomitas de microondas",c:"Snack · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"La bolsa libera compuestos perfluorados (PFAS) con el calor. El saborizante a mantequilla artificial (diacetilo) es tóxico para las vías respiratorias.",efe:"Los PFAS son contaminantes persistentes que se acumulan en el organismo y no se eliminan.",lav:"Preparar palomitas en olla con aceite de coco. Más sanas y económicas.",alts:["Palomitas caseras en olla","Maíz tostado artesanal","Nueces y semillas naturales"]},
+  {id:27,e:"🍔",n:"Hamburguesa industrial",c:"Carne · Ultraprocesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"Las hamburguesas industriales mezclan partes de múltiples animales con aditivos, sodio elevado y grasa saturada.",efe:"Alto riesgo de contaminación bacteriana por mezcla de carne. Nitratos, grasa saturada y sodio elevado.",lav:"Cocinar completamente. Preferir hamburguesas caseras de carne molida fresca.",alts:["Hamburguesa casera de carne molida","Hamburguesa de legumbres casera","Pollo a la plancha"]},
+  {id:28,e:"🥫",n:"Aceite de palma refinado",c:"Grasa · Procesado",bg:"#fce4ec",r:"alto",rl:"Riesgo alto",que:"El aceite de palma refinado tiene subproductos de refinación (ésteres de glicidilo) que son posibles carcinógenos.",efe:"Presente en la mayoría de ultraprocesados. Alto consumo asociado a mayor riesgo cardiovascular.",lav:"Revisar etiquetas y evitar productos con aceite de palma entre los primeros ingredientes.",alts:["Aceite de oliva extra virgen","Aceite de coco natural","Aceite de aguacate"]},
+  // MODERADO
+  {id:29,e:"🍐",n:"Pera importada",c:"Fruta · Importada",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las peras importadas tienen tratamientos con fungicidas post-cosecha para aguantar el transporte largo.",efe:"Residuos fungicidas en la superficie. Riesgo moderado con lavado adecuado.",lav:"Lavar con agua y vinagre blanco, frotar la superficie. Pelar recomendable en niños.",alts:["Guayaba local","Pera de temporada","Guanábana"]},
+  {id:30,e:"🥒",n:"Pepino",c:"Verdura · Cultivada",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El pepino puede tener recubrimientos de cera que retienen pesticidas en su superficie.",efe:"Riesgo moderado. La cáscara concentra mayor cantidad de residuos.",lav:"Lavar con cepillo bajo agua corriente. Pelar recomendable para reducir exposición.",alts:["Pepino local sin cera","Zucchini local","Chayote"]},
+  {id:31,e:"🥕",n:"Zanahoria convencional",c:"Verdura · Raíz",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las zanahorias convencionales acumulan pesticidas principalmente en su superficie exterior.",efe:"Riesgo moderado. Pelado y lavado adecuado reduce significativamente la exposición.",lav:"Fregar bajo agua corriente y pelar siempre. Eliminar el extremo superior.",alts:["Zanahoria orgánica","Zanahoria de Viva Market","Remolacha local"]},
+  {id:32,e:"🥔",n:"Papa con cáscara",c:"Tubérculo · Cultivado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"La papa puede tener residuos de pesticidas en la superficie y en capas superficiales.",efe:"Riesgo moderado cuando se consume con cáscara frecuentemente. Pelada reduce la exposición.",lav:"Fregar con cepillo bajo agua. Pelar preferible para reducir residuos en el consumo diario.",alts:["Papa orgánica","Papa chola de productores locales","Camote"]},
+  {id:33,e:"🥝",n:"Kiwi importado",c:"Fruta · Importada",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El kiwi puede tener residuos fungicidas en su piel. La piel porosa retiene residuos.",efe:"Riesgo moderado. Pelado reduce exposición significativamente.",lav:"Lavar bajo agua corriente antes de pelar. No consumir la piel.",alts:["Papaya local","Maracuyá","Granadilla nacional"]},
+  {id:34,e:"🧁",n:"Galletas industriales",c:"Snack · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las galletas industriales contienen grasas parcialmente hidrogenadas (trans), azúcar refinada y conservantes.",efe:"Las grasas trans aumentan el colesterol malo. Son especialmente dañinas para el corazón en consumo habitual.",lav:"Hornear galletas caseras con avena y frutas. Más nutritivas y sin aditivos.",alts:["Galletas de avena caseras","Granola artesanal de Viva Market","Frutas secas naturales"]},
+  {id:35,e:"🍫",n:"Chocolate industrial",c:"Dulce · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El chocolate industrial tiene azúcar como primer ingrediente, lecitinas artificiales y saborizantes sintéticos.",efe:"Riesgo moderado. Alto contenido de azúcar. Poco porcentaje de cacao real.",lav:"Elegir chocolate con 70%+ de cacao. El cacao puro tiene beneficios reales documentados.",alts:["Chocolate Guancavilca de Viva Market","Cacao puro ecuatoriano","Nibs de cacao"]},
+  {id:36,e:"🥛",n:"Leche saborizada",c:"Lácteo · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Contiene azúcar añadida, estabilizantes y saborizantes artificiales. Una botella puede tener 5 cucharadas de azúcar.",efe:"El consumo frecuente contribuye al exceso de azúcar en la dieta infantil y a malos hábitos alimentarios.",lav:"Optar por leche entera natural y agregar cacao puro sin azúcar si se quiere saborizar.",alts:["Leche entera natural","Cacao puro + leche","Queso kéfir de Viva Market","Yogur natural"]},
+  {id:37,e:"🧀",n:"Queso procesado",c:"Lácteo · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Los quesos procesados tipo 'singles' contienen fosfatos, conservantes y hasta 50% de sustitutos lácteos artificiales.",efe:"No aportan los beneficios nutricionales del queso real. Alto contenido de sodio y aditivos.",lav:"Preferir quesos artesanales frescos locales con ingredientes simples.",alts:["Queso fresco artesanal","Queso crema kéfir de Viva Market","Requesón local"]},
+  {id:38,e:"🧴",n:"Yogur azucarado",c:"Lácteo · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Los yogures azucarados tienen hasta 4 cucharaditas de azúcar, saborizantes y conservantes que afectan las bacterias vivas.",efe:"El azúcar excesivo cancela los beneficios del probiótico. Riesgo moderado con consumo frecuente.",lav:"Elegir yogur natural sin azúcar y añadir fruta fresca.",alts:["Yogur natural sin azúcar","Kéfir artesanal de Viva Market","Yogur de leche entera"]},
+  {id:39,e:"🌾",n:"Pan de molde industrial",c:"Panadería · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El pan industrial tiene hasta 20 ingredientes: emulsionantes, conservantes, mejoradores de masa y azúcar.",efe:"Eleva el índice glucémico rápidamente y aporta escaso valor nutricional real.",lav:"Elegir pan artesanal con ingredientes simples: harina, agua, sal, levadura.",alts:["Pan de masa madre de Viva Market","Pan integral artesanal","Tortillas caseras de maíz"]},
+  {id:40,e:"🥫",n:"Enlatados en general",c:"Conserva · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Los enlatados pueden tener recubrimiento interior con BPA. Además contienen conservantes y sodio elevado.",efe:"BPA es disruptor endócrino. Riesgo moderado con consumo ocasional, mayor en consumo habitual.",lav:"Elegir conservas sin BPA (indicado en etiqueta). Escurrir y enjuagar antes de usar.",alts:["Verduras frescas","Legumbres cocinadas en casa","Atún fresco"]},
+  {id:41,e:"🥗",n:"Aderezos industriales",c:"Condimento · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Los aderezos de botella tienen azúcar oculta, conservantes, colorantes y grasas de baja calidad.",efe:"Transforman una ensalada saludable en un alimento procesado. Alto sodio y azúcar oculta.",lav:"Preparar aderezos en casa: aceite de oliva, limón, sal, hierbas frescas.",alts:["Aceite de oliva extra virgen","Limón + aceite casero","Ghee Kushi de Viva Market"]},
+  {id:42,e:"🫙",n:"Kétchup industrial",c:"Condimento · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El kétchup industrial tiene jarabe de maíz de alta fructosa como ingrediente principal, más que el tomate.",efe:"El consumo frecuente aporta azúcar oculta significativa. Riesgo moderado.",lav:"Preparar kétchup casero con tomate natural, vinagre y especias.",alts:["Kétchup casero natural","Salsa de tomate natural","Ají con tomate fresco"]},
+  {id:43,e:"🫙",n:"Salsa de soya convencional",c:"Condimento · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"La salsa de soya convencional usa soya transgénica con alto uso de glifosato en su cultivo.",efe:"Glifosato residual más sodio elevado son las principales preocupaciones con consumo frecuente.",lav:"Usar en cantidades pequeñas. Preferir tamari orgánico o reducido en sodio.",alts:["Tamari orgánico","Salsa casera de hierbas","Limón + sal"]},
+  {id:44,e:"🥣",n:"Granola industrial azucarada",c:"Cereal · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"La granola industrial tiene jarabe de maíz o azúcar como segundo ingrediente, más aceite de palma.",efe:"El halo de 'saludable' engaña: puede tener tanto azúcar como un dulce industrial.",lav:"Leer siempre los ingredientes. Elegir granola artesanal sin azúcar añadida.",alts:["Granola Feliz artesanal de Viva Market","Avena con miel local","Granola casera"]},
+  {id:45,e:"🫗",n:"Leche vegetal industrial",c:"Bebida · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las leches vegetales industriales de avena o almendra tienen estabilizantes, azúcares y vitaminas sintéticas.",efe:"No son equivalentes nutricionales a la leche. Revisar siempre los ingredientes.",lav:"Preparar leches vegetales caseras con avena, arroz o almendras.",alts:["Leche de avena casera","Leche de coco fresca","Leche entera natural"]},
+  {id:46,e:"🧂",n:"Sal de mesa refinada",c:"Condimento · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"La sal refinada tiene solo cloruro de sodio, eliminando minerales traza presentes en la sal natural.",efe:"El consumo excesivo de sodio puro contribuye a hipertensión. El problema es la cantidad y calidad.",lav:"Usar en cantidad mínima. Preferir sal sin refinar que conserva minerales naturales.",alts:["Sal rosada del Himalaya","Sal marina sin refinar","Hierbas aromáticas como sustituto"]},
+  {id:47,e:"🌾",n:"Arroz blanco refinado",c:"Cereal · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El arroz blanco pierde fibra, vitaminas y minerales en el proceso de refinamiento industrial.",efe:"Alto índice glucémico. Nutricionalmente empobrecido. Riesgo moderado con consumo diario.",lav:"Lavar bien antes de cocinar. Combinar con proteínas y vegetales para reducir impacto glucémico.",alts:["Arroz integral local","Quinua","Cebada perlada"]},
+  {id:48,e:"🫙",n:"Enlatados de tomate",c:"Conserva · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las conservas de tomate en lata con revestimiento BPA suponen riesgo moderado con exposición acumulada.",efe:"El BPA es disruptor endócrino. Preferir siempre conservas en vidrio.",lav:"Escurrir líquido. Preferir vidrio sobre lata. Buscar etiqueta 'sin BPA'.",alts:["Tomate fresco nacional procesado en casa","Tomate en frasco de vidrio","Puré de tomate casero"]},
+  {id:49,e:"🥫",n:"Fréjol enlatado",c:"Legumbre · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Los fréjoles enlatados tienen sodio elevado y posible BPA del recubrimiento interior.",efe:"Nutricionalmente comparable al cocido en casa, pero con más sodio y riesgo moderado por BPA.",lav:"Escurrir y enjuagar bajo agua abundante. Reduce el sodio hasta un 40%.",alts:["Fréjol seco cocinado en casa","Fréjol canario local","Lenteja cocida casera"]},
+  {id:50,e:"🧇",n:"Avena convencional",c:"Cereal · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"La avena convencional puede tener residuos de glifosato, herbicida utilizado en la cosecha.",efe:"Riesgo moderado. Consumo diario suma exposición acumulada especialmente en niños.",lav:"Preferir avena orgánica certificada. Lavar si se consume en grano.",alts:["Avena orgánica certificada","Granola artesanal de Viva Market","Quinua local"]},
+  {id:51,e:"🥞",n:"Mezclas para pancakes",c:"Desayuno · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las mezclas industriales de pancakes tienen polvo de hornear con aluminio, azúcar y conservantes.",efe:"Riesgo moderado. El aluminio en exceso tiene potencial neurotóxico con consumo habitual.",lav:"Preparar pancakes caseros con avena, huevo y banano maduro. Sin mezclas industriales.",alts:["Pancakes de avena y banano caseros","Tostadas de pan de masa madre"]},
+  {id:52,e:"🍝",n:"Pasta de harina blanca",c:"Cereal · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"La pasta de harina refinada tiene alto índice glucémico y bajo valor nutricional.",efe:"Riesgo moderado con consumo diario. Pico glucémico sin fibra que lo compense.",lav:"Cocinar al dente reduce el índice glucémico. Combinar con proteína y vegetales.",alts:["Pasta integral","Pasta de legumbres","Arroz integral"]},
+  {id:53,e:"🫙",n:"Mantequilla de maní industrial",c:"Untable · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"La versión industrial tiene aceite de palma, azúcar y estabilizantes. El maní puede tener aflatoxinas.",efe:"Riesgo moderado. Las aflatoxinas son hepatotóxicas. Elegir versiones sin aceite de palma.",lav:"Preferir mantequilla de maní 100% natural sin aditivos.",alts:["Mantequilla de maní 100% natural","Pasta de almendras","Tahini artesanal"]},
+  {id:54,e:"🥚",n:"Huevo industrial de granja",c:"Proteína · Convencional",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Los huevos de granjas industriales pueden tener residuos de antibióticos y mayor riesgo de salmonela por hacinamiento.",efe:"Riesgo moderado. Preferir huevos de gallinas de campo o pastoreo certificado.",lav:"Lavar antes de usar. No guardar lavados en nevera.",alts:["Huevo de campo de Viva Market","Huevo criollo","Huevo orgánico"]},
+  {id:55,e:"💧",n:"Agua embotellada en plástico PET",c:"Bebida · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El plástico PET puede liberar microplásticos especialmente con calor, luz solar o múltiples usos.",efe:"Riesgo moderado. Los microplásticos se acumulan en tejidos y se han detectado en sangre humana.",lav:"Preferir agua filtrada en casa o botellas de vidrio. Nunca reusar botellas PET.",alts:["Agua filtrada casera","Agua en botella de vidrio","Filtro de carbón activo"]},
+  {id:56,e:"🫖",n:"Café instantáneo",c:"Bebida · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"El café instantáneo tiene acrilamida en alta concentración formada en el proceso industrial de secado.",efe:"Riesgo moderado. La acrilamida es probable carcinógeno. Consumo diario suma exposición.",lav:"Preferir café en grano o molido artesanal, especialmente de origen ecuatoriano.",alts:["Café molido artesanal","Café de productores locales","Infusiones naturales"]},
+  {id:57,e:"🥗",n:"Ensalada en bolsa pre-lavada",c:"Vegetal · Procesado",bg:"#fff3e0",r:"moderado",rl:"Moderado",que:"Las ensaladas pre-lavadas en bolsa pueden tener clorina de lavado industrial y pesticidas residuales.",efe:"Riesgo moderado. El cloro residual puede ser problemático. Mejores las verduras lavadas en casa.",lav:"Lavar nuevamente en casa aunque diga 'listo para consumir'.",alts:["Lechuga fresca de Viva Market","Verduras a granel de feria","Cultivar en casa"]},
+  // BAJO RIESGO
+  {id:58,e:"🍌",n:"Banano nacional",c:"Fruta · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El banano ecuatoriano tiene cáscara gruesa que protege muy bien la pulpa de la mayoría de agroquímicos superficiales.",efe:"Una de las frutas más seguras disponibles localmente. Excelente fuente de potasio, vitamina B6 y energía.",lav:"Lavar la cáscara antes de pelar evita transferir residuos a las manos al manipularla.",alts:["Orito nacional","Guineo verde","Plátano maduro"]},
+  {id:59,e:"🥭",n:"Mango local",c:"Fruta · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El mango ecuatoriano tiene cáscara gruesa que ofrece excelente protección. Menor exposición que frutas importadas.",efe:"Bajo riesgo cuando se pela correctamente. Rico en vitamina C, betacaroteno y antioxidantes.",lav:"Lavar la cáscara y pelar antes de consumir. Evitar consumir la piel.",alts:["Papaya local","Piña nacional","Maracuyá"]},
+  {id:60,e:"🍋",n:"Limón / Lima local",c:"Cítrico · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Los cítricos locales tienen buena protección natural gracias a su cáscara gruesa con aceites esenciales.",efe:"Bajo riesgo si no se consume la cáscara. La pulpa está bien protegida.",lav:"Lavar con agua si se usa la cáscara para preparaciones. Solo usar cáscara de cítricos orgánicos o locales.",alts:["Naranja local","Mandarina nacional","Toronja local"]},
+  {id:61,e:"🥦",n:"Brócoli local",c:"Verdura · Local",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El brócoli local tiene niveles bajos de pesticidas comparado con versiones importadas. Menor transporte y menos tratamientos.",efe:"Beneficioso: sus compuestos sulforafano tienen efectos protectores documentados contra enfermedades crónicas.",lav:"Lavar en agua fría con una pizca de bicarbonato durante 5 minutos. Suficiente.",alts:["Coliflor local","Col rizada","Espinaca orgánica de Viva Market"]},
+  {id:62,e:"🥑",n:"Aguacate / Palta",c:"Fruta · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El aguacate tiene cáscara gruesa que protege muy bien la pulpa de pesticidas y contaminantes.",efe:"Bajo riesgo. Rico en grasas saludables monoinsaturadas, vitamina E y potasio.",lav:"Lavar la cáscara antes de cortar para evitar transferir residuos al corte.",alts:["Aguacate local de temporada","Aguacate de Viva Market"]},
+  {id:63,e:"🍍",n:"Piña nacional",c:"Fruta · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La piña tiene cáscara muy gruesa y espinosa que protege muy bien la pulpa de los agroquímicos.",efe:"Muy bajo riesgo. Rica en bromelina con propiedades antiinflamatorias documentadas.",lav:"Lavar la cáscara exterior antes de cortar para no transferir residuos.",alts:["Papaya local","Maracuyá","Guanábana"]},
+  {id:64,e:"🥥",n:"Coco nacional",c:"Fruta · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La cáscara gruesa del coco lo protege excelentemente de pesticidas. Su agua es naturalmente estéril.",efe:"Muy bajo riesgo. El agua de coco es hidratante natural con electrolitos balanceados.",lav:"Lavar el exterior antes de abrir.",alts:["Agua de coco natural","Leche de coco casera"]},
+  {id:65,e:"🍊",n:"Naranja local",c:"Cítrico · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La naranja local ecuatoriana tiene buena protección gracias a su cáscara. Bajo uso de pesticidas en cultivo local.",efe:"Bajo riesgo. Excelente fuente de vitamina C y flavonoides antioxidantes.",lav:"Lavar antes de exprimir o pelar. Simple y suficiente.",alts:["Mandarina nacional","Toronja","Limón local"]},
+  {id:66,e:"🌿",n:"Hierbas aromáticas frescas",c:"Condimento · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Las hierbas frescas locales cultivadas sin pesticidas son muy seguras y nutritivas.",efe:"Bajo riesgo. Muchas tienen propiedades antiinflamatorias, digestivas y antibacterianas.",lav:"Lavar bajo agua corriente. Las de cultivo local sin pesticidas son las más seguras.",alts:["Albahaca local","Orégano fresco","Culantro nacional","Hierbabuena"]},
+  {id:67,e:"🧅",n:"Cebolla local",c:"Verdura · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La cebolla local tiene bajo uso de pesticidas comparado con otros cultivos intensivos.",efe:"Bajo riesgo. Rica en quercetina, un potente antioxidante antiinflamatorio.",lav:"Pelar las capas externas y lavar bajo agua. Suficiente.",alts:["Cebolla paiteña local","Cebolla blanca nacional","Cebollín fresco"]},
+  {id:68,e:"🧄",n:"Ajo local",c:"Condimento · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El ajo local tiene protección natural por sus compuestos azufrados y requiere pocos agroquímicos.",efe:"Muy bajo riesgo. Sus compuestos azufrados tienen efectos antimicrobianos y cardioprotectores documentados.",lav:"Pelar siempre. No requiere precaución especial por pesticidas.",alts:["Ajo nacional","Ajo de Viva Market"]},
+  {id:69,e:"🍠",n:"Camote / Batata",c:"Tubérculo · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El camote acumula menos pesticidas que la papa convencional. Cultivo local con bajo uso de agroquímicos.",efe:"Bajo riesgo. Excelente fuente de betacaroteno, fibra y vitaminas del complejo B.",lav:"Fregar bien bajo agua. Se puede consumir con cáscara si es orgánico.",alts:["Camote de productores locales","Yuca nacional","Ñame"]},
+  {id:70,e:"🫘",n:"Legumbres secas",c:"Proteína vegetal · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Las legumbres secas locales son uno de los alimentos menos contaminados disponibles. Excelentes en proteína.",efe:"Muy bajo riesgo. Excelente perfil: proteína completa, fibra, hierro y micronutrientes.",lav:"Remojar y cocinar bien. No requiere precaución especial por pesticidas.",alts:["Fréjol canario local","Lenteja","Garbanzo","Arveja fresca"]},
+  {id:71,e:"🥚",n:"Huevo de gallina libre",c:"Proteína · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Los huevos de gallinas de campo o pastoreo tienen mejor perfil nutricional y menor exposición a antibióticos.",efe:"Excelente fuente de proteína completa con todos los aminoácidos esenciales. Bajo riesgo.",lav:"Lavar con agua antes de usar. Cocinar bien la clara.",alts:["Huevo de campo de Viva Market","Huevo criollo de feria","Huevo orgánico certificado"]},
+  {id:72,e:"🐟",n:"Pescado fresco local",c:"Proteína · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El pescado fresco local de aguas ecuatorianas tiene bajo contenido de metales pesados comparado con especies de profundidad.",efe:"Excelente fuente de omega-3. Bajo riesgo consumido fresco 2-3 veces por semana.",lav:"Lavar bien y cocinar completamente. Evitar consumo crudo frecuente.",alts:["Corvina fresca","Tilapia local","Camarón nacional artesanal"]},
+  {id:73,e:"🫘",n:"Fréjol y arvejas frescas",c:"Legumbre · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Las arvejas y fréjoles frescos en vaina son de bajo riesgo. La vaina protege el grano del pesticida.",efe:"Bajo riesgo. Ricos en proteína vegetal, vitamina C y fibra.",lav:"Lavar la vaina. Los granos interiores están naturalmente protegidos.",alts:["Fréjol tierno local","Habas frescas","Choclo desgranado"]},
+  {id:74,e:"🌱",n:"Germinados caseros",c:"Vegetal · Artesanal",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Los germinados caseros de lentejas, fréjol o trigo son altamente nutritivos y completamente sin contaminación química.",efe:"Bajo riesgo. Altos en enzimas, vitaminas y proteína biodisponible. Económicos.",lav:"Enjuagar dos veces al día durante el proceso de germinado. Consumir frescos.",alts:["Germinados de lentejas","Germinados de garbanzo","Brotes de alfalfa"]},
+  {id:75,e:"🌾",n:"Quinua",c:"Semilla · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La quinua ecuatoriana tiene bajo uso de pesticidas y altísimo valor nutricional.",efe:"Bajo riesgo. Proteína completa con los 9 aminoácidos esenciales. Naturalmente libre de gluten.",lav:"Lavar bien bajo agua fría para eliminar saponinas naturales antes de cocinar.",alts:["Amaranto local","Cañihua","Maíz andino"]},
+  {id:76,e:"🍞",n:"Pan artesanal masa madre",c:"Panadería · Artesanal",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El pan de masa madre tiene fermentación lenta que reduce antinutrientes y mejora la biodisponibilidad de minerales.",efe:"Bajo riesgo. Índice glucémico más bajo que el pan industrial. Más nutritivo y digestible.",lav:"No requiere precaución especial.",alts:["Pan de masa madre de Viva Market","Pan integral artesanal"]},
+  {id:77,e:"🫙",n:"Fermentados artesanales",c:"Probiótico · Artesanal",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Los fermentados artesanales como kéfir, chucrut y kombucha tienen millones de bacterias beneficiosas vivas.",efe:"Muy bajo riesgo. Beneficiosos para la microbiota intestinal y el sistema inmune.",lav:"Verificar que sean artesanales sin conservantes que maten las bacterias beneficiosas.",alts:["Queso kéfir de Viva Market","Granola Feliz de Viva Market"]},
+  {id:78,e:"🍯",n:"Miel pura de abeja local",c:"Edulcorante · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La miel cruda de apicultores locales preserva propóleos, enzimas y antibióticos naturales.",efe:"Bajo riesgo. Propiedades antimicrobianas y cicatrizantes documentadas científicamente.",lav:"No requiere preparación especial. No dar a menores de 1 año por riesgo de botulismo.",alts:["Miel artesanal de Viva Market","Panela orgánica","Azúcar de coco"]},
+  {id:79,e:"🫙",n:"Panela / raspadura",c:"Edulcorante · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La panela nacional es azúcar de caña sin refinamiento que conserva melaza, minerales y vitaminas.",efe:"Bajo riesgo. Mejor perfil nutricional que el azúcar blanca refinada.",lav:"No requiere preparación especial.",alts:["Panela granulada local","Miel de abeja","Azúcar de coco"]},
+  {id:80,e:"🧈",n:"Mantequilla real",c:"Grasa · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La mantequilla real de vacas de pasto es mejor opción que cualquier margarina artificial.",efe:"Bajo riesgo con consumo moderado. Grasas saturadas naturales son mejores que trans artificiales.",lav:"No requiere preparación especial.",alts:["Mantequilla de leche de pasto","Ghee artesanal de Viva Market","Aceite de coco virgen"]},
+  {id:81,e:"🥑",n:"Aceite de oliva extra virgen",c:"Grasa · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El aceite de oliva extra virgen de primera extracción en frío preserva polifenoles antioxidantes.",efe:"Muy bajo riesgo. Protector cardiovascular ampliamente documentado. Usar preferiblemente en frío.",lav:"No requiere preparación especial.",alts:["Aceite de aguacate","Aceite de coco virgen"]},
+  {id:82,e:"🐓",n:"Pollo de campo / criollo",c:"Proteína · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El pollo criollo criado en campo tiene menor concentración de antibióticos y hormonas que el industrial de engorde rápido.",efe:"Bajo riesgo. Mejor perfil nutricional y de ácidos grasos que el pollo industrial.",lav:"Lavar y cocinar completamente.",alts:["Pollo criollo de Viva Market","Cuy local","Conejo nacional"]},
+  {id:83,e:"🫙",n:"Vinagre de manzana natural",c:"Condimento · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El vinagre de manzana no filtrado con 'madre' contiene probióticos y enzimas activas beneficiosas.",efe:"Muy bajo riesgo. Puede ayudar al equilibrio glucémico y tiene propiedades antimicrobianas.",lav:"No requiere preparación especial.",alts:["Vinagre de caña artesanal","Limón fresco"]},
+  {id:84,e:"🌰",n:"Nueces y semillas naturales",c:"Semilla · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Las nueces y semillas sin procesar son de bajo riesgo y altamente nutritivas.",efe:"Bajo riesgo. Excelentes fuentes de grasas saludables, proteína y minerales esenciales.",lav:"Preferir sin sal añadida ni aceites. Lavar y tostar ligeramente si se desea.",alts:["Maní natural local","Semillas de girasol","Pepas de zambo tostadas"]},
+  {id:85,e:"🍵",n:"Infusiones de hierbas locales",c:"Bebida · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Las infusiones de hierbas locales frescas son de bajo riesgo y tienen beneficios documentados.",efe:"Muy bajo riesgo. Muchas tienen propiedades relajantes, digestivas o antiinflamatorias.",lav:"Usar hierbas frescas de huerto o secas de proveedores conocidos.",alts:["Hierba luisa fresca","Manzanilla local","Jengibre fresco"]},
+  {id:86,e:"🫙",n:"Cacao puro ecuatoriano",c:"Alimento funcional · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El cacao ecuatoriano tipo Arriba es reconocido mundialmente como de alta calidad y bajo en contaminantes.",efe:"Muy bajo riesgo. Rico en flavonoides con efectos cardioprotectores y antioxidantes.",lav:"No requiere preparación especial.",alts:["Chocolate Guancavilca de Viva Market","Nibs de cacao","Cacao en polvo puro sin azúcar"]},
+  {id:87,e:"🥩",n:"Carne de res sin procesar",c:"Proteína · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La carne de res sin procesar de ganadería local tiene bajo riesgo comparado con embutidos industriales.",efe:"Bajo riesgo con cocción adecuada. Preferir cortes magros y ganadería extensiva sin antibióticos.",lav:"Cocinar a temperatura adecuada. Lavar superficies de contacto.",alts:["Carne local de finca","Pollo de campo","Pescado fresco"]},
+  {id:88,e:"🐟",n:"Sardinas en aceite de oliva",c:"Proteína · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Las sardinas son peces pequeños con bajo contenido de mercurio. En aceite de oliva aportan omega-3.",efe:"Bajo riesgo. Excelente fuente de calcio (con espinas), omega-3 y vitamina D.",lav:"Escurrir el aceite si se prefiere. No requiere más preparación.",alts:["Sardinas frescas locales","Atún en agua","Corvina fresca"]},
+  {id:89,e:"🌿",n:"Aceite de coco virgen",c:"Grasa · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El aceite de coco virgen sin refinar conserva triglicéridos de cadena media y propiedades antimicrobianas.",efe:"Bajo riesgo con consumo moderado. Estable a altas temperaturas para cocción.",lav:"No requiere preparación especial.",alts:["Aceite de oliva extra virgen","Mantequilla natural","Ghee artesanal"]},
+  {id:90,e:"🎋",n:"Bambú / palmito fresco",c:"Vegetal · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El palmito ecuatoriano fresco tiene bajo uso de agroquímicos y es un producto local de alta calidad.",efe:"Muy bajo riesgo. Bajo en calorías, rico en fibra y minerales.",lav:"Lavar y cocinar completamente.",alts:["Palmito de productores locales","Espárragos frescos"]},
+  {id:91,e:"🥗",n:"Berros y acelga fresca",c:"Verdura · Local",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Los berros y acelga locales de pequeños productores tienen bajo uso de pesticidas.",efe:"Bajo riesgo. Ricos en hierro, calcio y vitamina K.",lav:"Lavar bien bajo agua corriente. Separar las hojas para un lavado completo.",alts:["Acelga de Viva Market","Espinaca orgánica","Col rizada local"]},
+  {id:92,e:"🥜",n:"Maní local sin procesar",c:"Semilla · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El maní nacional sin tostar ni salar es de bajo riesgo. Verificar que no tenga aflatoxinas visibles.",efe:"Bajo riesgo. Excelente fuente de proteína, grasas saludables y vitamina E.",lav:"Lavar y secar antes de tostar. Evitar maní con manchas que puedan indicar hongos.",alts:["Maní artesanal local","Pepas de zambo","Semillas de girasol"]},
+  {id:93,e:"🫐",n:"Mora nacional",c:"Fruta · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La mora ecuatoriana local tiene menor exposición a pesticidas que los arándanos importados.",efe:"Bajo riesgo. Rica en antocianinas con propiedades antioxidantes y antiinflamatorias.",lav:"Lavar suavemente bajo agua fría. Consumir pronto.",alts:["Taxo local","Uvilla","Tomate de árbol"]},
+  {id:94,e:"🍈",n:"Maracuyá / Granadilla",c:"Fruta · Nacional",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La maracuyá y granadilla local tienen cáscara gruesa que protege muy bien la pulpa interna.",efe:"Muy bajo riesgo. Ricas en vitamina C, antioxidantes y propiedades sedantes naturales.",lav:"Lavar la cáscara exterior. La pulpa interna está naturalmente protegida.",alts:["Guanábana local","Taxo","Tomate de árbol"]},
+  {id:95,e:"🍃",n:"Té verde / negro artesanal",c:"Bebida · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El té artesanal de hoja suelta tiene menos contaminantes que las bolsitas industriales.",efe:"Bajo riesgo. El té verde tiene catequinas con efectos antioxidantes y metabólicos documentados.",lav:"Usar agua filtrada. Temperatura adecuada según el tipo (75-95°C).",alts:["Té de hierba luisa local","Infusión de jengibre fresco","Té de manzanilla"]},
+  {id:96,e:"🥑",n:"Guacamole casero",c:"Preparación · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"El guacamole casero hecho con aguacate local, limón y culantro es un alimento de muy bajo riesgo.",efe:"Muy bajo riesgo. Grasas saludables, vitaminas y antioxidantes en una preparación simple.",lav:"Lavar todos los ingredientes. Consumir pronto para evitar oxidación.",alts:["Guacamole de Viva Market","Aguacate solo con limón"]},
+  {id:97,e:"🌮",n:"Tortilla de maíz artesanal",c:"Panadería · Artesanal",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Las tortillas de maíz artesanales hechas con maíz local nixtamalizado son de bajo riesgo.",efe:"Bajo riesgo. El proceso de nixtamalización mejora la disponibilidad de nutrientes.",lav:"No requiere precaución especial si es de productores conocidos.",alts:["Tortillas de Viva Market","Pan de masa madre","Arepas de maíz local"]},
+  {id:98,e:"🫙",n:"Encurtidos artesanales",c:"Fermentado · Artesanal",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"Los encurtidos artesanales en vinagre de manzana o salmuera son ricos en probióticos y enzimas.",efe:"Bajo riesgo. Probióticos beneficiosos para la microbiota cuando no tienen conservantes.",lav:"Verificar que no tengan conservantes artificiales que eliminen las bacterias beneficiosas.",alts:["Encurtidos de Viva Market","Chucrut casero","Kimchi artesanal"]},
+  {id:99,e:"🌾",n:"Harina integral de trigo",c:"Cereal · Natural",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La harina integral conserva salvado y germen con fibra, vitaminas B y minerales que la refinada pierde.",efe:"Bajo riesgo. Mejor perfil nutricional e índice glucémico más bajo que la harina blanca.",lav:"No requiere precaución especial.",alts:["Harina de arroz integral","Harina de plátano","Harina de quinua"]},
+  {id:100,e:"🥣",n:"Avena orgánica",c:"Cereal · Orgánico",bg:"#e8f5e8",r:"bajo",rl:"Bajo riesgo",que:"La avena orgánica certificada está libre de glifosato y es una de las opciones más seguras para el desayuno.",efe:"Muy bajo riesgo. Rica en betaglucanos con efectos documentados en reducción del colesterol.",lav:"Lavar antes de cocinar si se usa en grano.",alts:["Avena orgánica certificada","Granola artesanal de Viva Market","Quinua cocida"]}
+];
+
+const ALERTAS_DATA = [
+  {tag:"Pesticidas",tagBg:"#fce4ec",tagC:"#880e4f",ico:"☣️",titulo:"Lo que no ves en tu plato puede afectar más",texto:"Los pesticidas no tienen sabor ni color. Su efecto es silencioso y acumulativo: pequeñas dosis diarias suman exposición a lo largo de meses y años, especialmente en niños en etapa de desarrollo.",accion:"Ver productos en tu cocina →",dest:"s-cocina"},
+  {tag:"Ultraprocesados",tagBg:"#fff3e0",tagC:"#e65100",ico:"🏭",titulo:"Tu hijo come lo que le das de hábito, no de gusto",texto:"Los ultraprocesados están diseñados para crear preferencias desde temprana edad. Cada semana que un niño los consume refuerza un patrón que es muy difícil de revertir en la adultez.",accion:"Conocer alternativas →",dest:"s-cocina"},
+  {tag:"Etiquetas",tagBg:"#e3f2fd",tagC:"#0d47a1",ico:"🔍",titulo:"Si tiene más de 5 ingredientes, piénsalo dos veces",texto:"Un producto con ingredientes simples y reconocibles es siempre mejor opción. Los nombres difíciles de pronunciar suelen ser aditivos que tu cuerpo no necesita y no reconoce.",accion:"Explorar tu cocina →",dest:"s-cocina"},
+  {tag:"Niños",tagBg:"#e8f5e8",tagC:"#1b5e20",ico:"👶",titulo:"El impacto en niños es 3 veces mayor que en adultos",texto:"El sistema nervioso, endócrino e inmune de los niños está en desarrollo. Su capacidad de eliminar toxinas es menor, por lo que la misma dosis de pesticida genera mayor impacto en su organismo.",accion:"Ir a Viva Market →",dest:"s-market"},
+  {tag:"Compra local",tagBg:"#faf0dc",tagC:"#7d4e00",ico:"🤝",titulo:"Comprar en ferias locales cambia más de lo que crees",texto:"Al comprar directamente a productores locales reduces intermediarios, apoyas la economía circular y obtienes alimentos más frescos con menor cantidad de agroquímicos. El cambio es doble: para tu familia y para tu comunidad.",accion:"Ver Viva Market →",dest:"s-market"},
+  {tag:"Fermentados",tagBg:"#e8f5e8",tagC:"#1b5e20",ico:"🦠",titulo:"Los alimentos fermentados protegen a toda la familia",texto:"El kéfir, chucrut y otros fermentados artesanales contienen millones de bacterias beneficiosas que fortalecen el sistema inmune, mejoran la digestión y reducen la inflamación crónica.",accion:"Ver alternativas →",dest:"s-market"},
+  {tag:"Comercio justo",tagBg:"#e8f5e8",tagC:"#1b5e20",ico:"🌱",titulo:"Cada compra es un voto por el tipo de comida que quieres",texto:"Cuando compras en ferias agroecológicas, apoyas a productores que cuidan la tierra sin tóxicos. No es solo una compra: es una decisión que cambia el sistema alimentario local.",accion:"Conocer Viva Market →",dest:"s-market"}
+];
+
+const CALENDARIO = {
+  "Enero":    [{d:"Sáb 17",p:true},{d:"Sáb 31",p:true}],
+  "Febrero":  [{d:"Sáb 14",p:true},{d:"Sáb 28",p:true}],
+  "Marzo":    [{d:"Sáb 14",p:true},{d:"Sáb 28",p:true}],
+  "Abril":    [{d:"Sáb 11",p:true},{d:"Sáb 25",next:true}],
+  "Mayo":     [{d:"Sáb 9"},{d:"Sáb 23"}],
+  "Junio":    [{d:"Sáb 6"},{d:"Sáb 20"}],
+  "Julio":    [{d:"Sáb 4"},{d:"Sáb 18"}],
+  "Agosto":   [{d:"Sáb 1"},{d:"Sáb 15"},{d:"Sáb 29"}],
+  "Septiembre":[{d:"Sáb 12"},{d:"Sáb 26"}],
+  "Octubre":  [{d:"Sáb 10"},{d:"Sáb 24"}],
+  "Noviembre":[{d:"Sáb 7"},{d:"Sáb 21"}],
+  "Diciembre":[{d:"Sáb 5"},{d:"Sáb 19"}]
+};
+
+let qIdx=0, qScores=[], selOpt=null, activeFilt='todos', searchTerm='';
+
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const t=document.getElementById(id);
+  if(t){t.classList.add('active');t.querySelectorAll('.sb').forEach(s=>s.scrollTop=0);}
+  const map={'s-home':0,'s-test':1,'s-cocina':2,'s-market':3};
+  document.querySelectorAll('.bnav').forEach((b,i)=>b.classList.toggle('active',map[id]===i));
+  // GA4: track pantalla vista
+  const screenNames = {
+    's-home':'Inicio','s-test':'Test de habitos','s-resultado':'Resultado test',
+    's-cocina':'Cocina diaria','s-producto':'Detalle producto',
+    's-alertas':'Alertas educativas','s-market':'Viva Market'
+  };
+  track('screen_view', {
+    screen_name: screenNames[id] || id,
+    screen_id: id
+  });
+}
+
+function renderTest(){
+  const q=PREGUNTAS[qIdx];
+  document.getElementById('q-text').textContent=q.t;
+  document.getElementById('q-count').textContent=(qIdx+1)+' de '+PREGUNTAS.length;
+  document.getElementById('q-prog').style.width=((qIdx+1)/PREGUNTAS.length*100)+'%';
+  document.getElementById('test-illus').textContent=q.e;
+  const btn=document.getElementById('q-next');
+  btn.textContent=qIdx<PREGUNTAS.length-1?'Siguiente →':'Ver mi resultado →';
+  btn.disabled=true; selOpt=null;
+  document.getElementById('q-opts').innerHTML=q.o.map((o,i)=>
+    `<button class="q-opt" onclick="selQ(this,${i})">${o}</button>`).join('');
+}
+
+function selQ(el,i){
+  document.querySelectorAll('.q-opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel'); selOpt=i;
+  document.getElementById('q-next').disabled=false;
+}
+
+function nextQ(){
+  if(selOpt===null)return;
+  qScores.push(PREGUNTAS[qIdx].p[selOpt]);
+  if(qIdx<PREGUNTAS.length-1){qIdx++;renderTest();}
+  else{showResult();}
+}
+
+function showResult(){
+  const total=qScores.reduce((a,b)=>a+b,0);
+  const p=PERFILES.find(x=>total>=x.min&&total<=x.max)||PERFILES[2];
+  document.getElementById('res-emoji').textContent=p.emoji;
+  const tag=document.getElementById('res-tag');
+  tag.textContent=p.tag; tag.style.cssText=p.ts;
+  document.getElementById('res-title').textContent=p.titulo;
+  document.getElementById('res-sub').textContent=p.sub;
+  document.getElementById('res-recs').innerHTML=p.recs.map(r=>`<div class="rec-item"><p>${r}</p></div>`).join('');
+  // GA4: test completado
+  track('test_completado', {
+    nivel_riesgo: p.tag,
+    puntaje_total: total
+  });
+  qIdx=0;qScores=[];selOpt=null;renderTest();
+  go('s-resultado');
+}
+
+function renderProds(){
+  let list=PRODUCTOS.filter(p=>{
+    const mf=activeFilt==='todos'||p.r===activeFilt;
+    const ms=!searchTerm||p.n.toLowerCase().includes(searchTerm)||p.c.toLowerCase().includes(searchTerm);
+    return mf&&ms;
+  });
+  document.getElementById('prod-list').innerHTML=list.length===0?
+    '<div class="empty-state">Sin resultados para tu búsqueda</div>':
+    list.map(p=>`<div class="prod-row" onclick="showProd(${p.id})">
+      <div class="prod-emoji" style="background:${p.bg};">${p.e}</div>
+      <div class="prod-info"><h4>${p.n}</h4><p>${p.c}</p></div>
+      <span class="risk-tag r${p.r[0]}">${p.rl}</span>
+    </div>`).join('');
+}
+
+function setFilter(f,el){
+  activeFilt=f;
+  document.querySelectorAll('.f-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  renderProds();
+  track('filtro_cocina', {filtro: f});
+}
+
+function filterProds(){
+  searchTerm=document.getElementById('search-inp').value.toLowerCase();
+  renderProds();
+}
+
+function showProd(id){
+  const p=PRODUCTOS.find(x=>x.id===id);
+  if(!p)return;
+  document.getElementById('det-title-bar').textContent=p.n;
+  document.getElementById('det-emoji').textContent=p.e;
+  document.getElementById('det-name').textContent=p.n;
+  document.getElementById('det-risk').innerHTML=`<span class="risk-tag r${p.r[0]}">${p.rl} · ${p.c}</span>`;
+  document.getElementById('det-body').innerHTML=`
+    <div class="fact"><div class="fact-lbl">¿Qué encontramos?</div><p>${p.que}</p></div>
+    <div class="fact"><div class="fact-lbl">¿Qué puede pasar?</div><p>${p.efe}</p></div>
+    <div class="fact"><div class="fact-lbl">Cómo reducir el riesgo</div><p>${p.lav}</p></div>
+    <p class="alt-title">Alternativas en Viva Market</p>
+    <div class="alt-chips">${p.alts.map(a=>`<span class="alt-chip">${a}</span>`).join('')}</div>
+    <div class="cta-card" onclick="go('s-market')">
+      <span style="font-size:22px;">🌿</span>
+      <div><h4>Ver en Viva Market</h4><p>Alternativas locales disponibles →</p></div>
+      <span class="cta-arr">›</span>
+    </div>`;
+  // GA4: producto visto
+  track('producto_visto', {
+    producto_nombre: p.n,
+    producto_riesgo: p.rl,
+    producto_categoria: p.c
+  });
+  go('s-producto');
+}
+
+function renderAlertas(){
+  document.getElementById('alert-body').innerHTML=ALERTAS_DATA.map(a=>`
+    <div class="alert-card">
+      <div class="ac-icon-strip" style="background:${a.tagBg};">${a.ico}</div>
+      <div class="ac-body">
+        <div class="ac-tag" style="background:${a.tagBg};color:${a.tagC};">${a.tag}</div>
+        <h3>${a.titulo}</h3>
+        <p>${a.texto}</p>
+        <p class="accion" onclick="go('${a.dest}')">${a.accion} →</p>
+      </div>
+    </div>`).join('');
+}
+
+function renderCal(){
+  document.getElementById('cal-grid').innerHTML=Object.entries(CALENDARIO).map(([m,fs])=>`
+    <div class="mo">
+      <div class="mo-name">${m}</div>
+      <div class="dates-row">${fs.map(f=>`<span class="dp${f.p?' past':f.next?' next':' soon'}">${f.d}${f.next?' ←':''}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+renderTest(); renderProds(); renderAlertas(); renderCal();
+</script>
+</body>
+</html>
